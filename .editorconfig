@@ -10,13 +10,16 @@ insert_final_newline = true
 [*.{xml,csproj}]
 indent_size = 2
 
+[nuget.config]
+indent_size = 2
+
 # C# files
 [*.cs]
 
 #### Core EditorConfig Options ####
 
-indent_size = 4
-tab_width = 4
+indent_size = 2
+tab_width = 2
 
 #### .NET Coding Conventions ####
 [*.{cs,vb}]
@@ -167,7 +170,7 @@ csharp_space_between_square_brackets = false
 # Wrapping preferences
 csharp_preserve_single_line_blocks = true
 csharp_preserve_single_line_statements = true
-csharp_style_namespace_declarations = block_scoped:silent
+csharp_style_namespace_declarations = file_scoped:warning
 csharp_style_prefer_method_group_conversion = true:silent
 csharp_style_prefer_top_level_statements = true:silent
 

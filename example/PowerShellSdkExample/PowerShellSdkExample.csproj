@@ -2,7 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-      <LangVersion>10</LangVersion>
+    <LangVersion>10</LangVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ModuleId>TestModule</ModuleId>
+    <Copyright>John Doe</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

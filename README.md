@@ -5,3 +5,5 @@ Simplifies the workflow of creating and bundling binary PowerShell modules. This
 - automatic creation of a module manifest file (*.psd1) based on the data provided in your project file and
 - creating a Nuget package that is ready to be consumed by *PowerShellGet*
 
+# Usage
+

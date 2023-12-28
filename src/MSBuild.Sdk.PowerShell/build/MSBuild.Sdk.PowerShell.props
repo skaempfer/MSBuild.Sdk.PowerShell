@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies Condition="'$(CopyLocalLockFileAssemblies)' == ''">false</CopyLocalLockFileAssemblies>
+    <IncludeBuildOutput Condition="'$(IncludeBuildOutput)' == ''">false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking Condition="'$(SuppressDependenciesWhenPacking)' == ''">true</SuppressDependenciesWhenPacking>
+  </PropertyGroup>
+
+  <UsingTask TaskName="MSBuild.Sdk.PowerShell.CreateModuleManifest"
+             AssemblyFile="$([MSBuild]::ValueOrDefault('$(PowerShellTaskAssembly)', '$(MSBuildThisFileDirectory)..\tasks\netstandard2.0\MSBuild.Sdk.PowerShell.dll'))"
+             Condition="'$(MSBuildRuntimeType)' == 'Core'" />
+  <UsingTask TaskName="MSBuild.Sdk.PowerShell.CreateModuleManifest"
+              AssemblyFile="$([MSBuild]::ValueOrDefault('$(PowerShellTaskAssembly)', '$(MSBuildThisFileDirectory)..\tasks\net48\MSBuild.Sdk.PowerShell.dll'))"
+              Condition="'$(MSBuildRuntimeType)' != 'Core'" />
+
+  <PropertyGroup>
+    <GenerateModuleManifest Condition="'$(GenerateModuleManifest)' == ''">True</GenerateModuleManifest>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>NU5100;NU5128;$(NoWarn)</NoWarn>
+  </PropertyGroup>
+
+</Project>

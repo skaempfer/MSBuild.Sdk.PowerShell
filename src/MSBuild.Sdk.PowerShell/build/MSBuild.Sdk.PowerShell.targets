@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="_CreateModuleManifest" AfterTargets="Build" Condition="'$(GenerateModuleManifest)' == 'true'">
+    <ItemGroup>
+      <FormatFiles Include="$(OutputPath)\**\*.format.ps1xml" />
+    </ItemGroup>
+
+    <CreateModuleManifest Author="$(Authors)"
+                          CompanyName="$(Company)"
+                          Copyright="$(Copyright)"
+                          CmdletsToExport="$(CmdletsToExport.Split(';'))"
+                          Description="$(Description)"
+                          FormatsToProcess="@(FormatFiles->'%(Filename)%(Extension)')"
+                          ModuleId="$(ModuleId)"
+                          ModuleVersion="$(Version)"
+                          PackageId="$(PackageId)"
+                          ProjectUri="$(RepositoryUrl)"
+                          RootModule="$(TargetFileName)"
+                          Tags="$(PackageTags.Split(' '))">
+      <Output TaskParameter="ManifestContent" PropertyName="ManifestContent" />
+    </CreateModuleManifest>
+  </Target>
+
+  <Target Name="_WriteModuleManifest" AfterTargets="_CreateModuleManifest" Condition="'$(GenerateModuleManifest)' == 'true'">
+    <WriteLinesToFile File="$(OutputPath)\$(PackageId).psd1" Overwrite="true" Lines="$(ManifestContent)" />
+  </Target>
+
+  <Target Name="_LayoutModulePackageContent" BeforeTargets="_LoadPackInputItems" DependsOnTargets="_CreateModuleManifest">
+    <ItemGroup>
+      <None Include="$(OutputPath)\**\*">
+        <Pack>True</Pack>
+        <PackagePath>.</PackagePath>
+      </None>
+    </ItemGroup>
+  </Target>
+
+</Project>

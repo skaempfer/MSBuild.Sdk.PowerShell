@@ -7,7 +7,7 @@ end_of_line = lf
 insert_final_newline = true
 
 # Xml files
-[*.{xml,csproj}]
+[*.{xml,csproj,props,targets}]
 indent_size = 2
 
 [nuget.config]

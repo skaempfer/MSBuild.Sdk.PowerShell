@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!--
+  Include this file and the Packages.props file (if necessary) in MSBuildAllProjects so that rebuilds happen if the Packages.props changes.
+  See https://www.panopticoncentral.net/2019/07/12/msbuildallprojects-considered-harmful/ for further info
+  -->
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildToolsVersion)' != 'Current'">$(MSBuildAllProjects);$(MsBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\build\MSBuild.Sdk.PowerShell.props" />
+    
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+    
+</Project>

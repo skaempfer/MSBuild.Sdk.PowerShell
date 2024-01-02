@@ -359,3 +359,8 @@ dotnet_naming_style.s_camelcase.word_separator =
 dotnet_naming_style.s_camelcase.capitalization = camel_case
 
 dotnet_style_prefer_collection_expression = true:suggestion
+
+# .NET Diagnostics
+
+# CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'
+dotnet_diagnostic.CS1591.severity = silent

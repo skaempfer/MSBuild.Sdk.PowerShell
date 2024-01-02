@@ -11,7 +11,7 @@
     >
     <!-- TODO: Add remaining tags (PSModule PSIncludes_Cmdlet PSCmdlet_Get-Greeting PSCommand_Get-Greeting) -->
     <PropertyGroup>
-      <PackageTags>$(PackageTags);PSModule</PackageTags>
+      <PackageTags>$(PackageTags) PSModule</PackageTags>
     </PropertyGroup>
   </Target>
   

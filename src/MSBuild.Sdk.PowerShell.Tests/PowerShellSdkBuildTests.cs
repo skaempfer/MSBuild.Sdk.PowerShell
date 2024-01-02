@@ -132,7 +132,7 @@ public class PowerShellSdkBuildTests : SdkTests
     FileList = @()
     PrivateData = @{{
         PSData = @{{
-            Tags = @('Tag1','Tag2','Tag3')
+            Tags = @('Tag1','Tag2','Tag3','PSModule')
             LicenseUri = ''
             ProjectUri = ''
             IconUri = ''

@@ -1,5 +1,5 @@
 name: Run tests
-run-name: Running tests for ProjectVersionUpdater
+run-name: Running tests for MSBuild.Sdk.PowerShell
 on: [push]
 jobs:
   build:

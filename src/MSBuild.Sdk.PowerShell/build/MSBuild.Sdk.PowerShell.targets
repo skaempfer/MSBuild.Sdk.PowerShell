@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <Target Name="_CreateModuleManifest" AfterTargets="Build" Condition="'$(GenerateModuleManifest)' == 'true'">
+  <PropertyGroup>
+    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);_CreateModulePackageTags</GenerateNuspecDependsOn>
+  </PropertyGroup>
+  
+  <Target 
+    Name="_CreateModulePackageTags"
+    AfterTargets="Build"
+    >
+    <!-- TODO: Add remaining tags (PSModule PSIncludes_Cmdlet PSCmdlet_Get-Greeting PSCommand_Get-Greeting) -->
+    <PropertyGroup>
+      <PackageTags>$(PackageTags);PSModule</PackageTags>
+    </PropertyGroup>
+  </Target>
+  
+  <Target
+    Name="_CreateModuleManifest"
+    AfterTargets="Build"
+    DependsOnTargets="_CreateModulePackageTags"
+    Condition="'$(GenerateModuleManifest)' == 'true'"
+    >
     <ItemGroup>
       <FormatFiles Include="$(OutputPath)\**\*.format.ps1xml" />
     </ItemGroup>
 
-    <CreateModuleManifest Author="$(Authors)"
-                          CompanyName="$(Company)"
-                          Copyright="$(Copyright)"
-                          CmdletsToExport="$(CmdletsToExport.Split(';'))"
-                          Description="$(Description)"
-                          FormatsToProcess="@(FormatFiles->'%(Filename)%(Extension)')"
-                          ModuleId="$(ModuleId)"
-                          ModuleVersion="$(Version)"
-                          PackageId="$(PackageId)"
-                          ProjectUri="$(RepositoryUrl)"
-                          RootModule="$(TargetFileName)"
-                          Tags="$(PackageTags.Split(' '))">
+    <CreateModuleManifest 
+      Author="$(Authors)"
+      CompanyName="$(Company)"
+      Copyright="$(Copyright)"
+      CmdletsToExport="$(CmdletsToExport.Split(';'))"
+      Description="$(Description)"
+      FormatsToProcess="@(FormatFiles->'%(Filename)%(Extension)')"
+      ModuleId="$(ModuleId)"
+      ModuleVersion="$(Version)"
+      PackageId="$(PackageId)"
+      ProjectUri="$(RepositoryUrl)"
+      RootModule="$(TargetFileName)"
+      Tags="$(PackageTags.Split(' '))"
+      >
       <Output TaskParameter="ManifestContent" PropertyName="ManifestContent" />
     </CreateModuleManifest>
   </Target>
@@ -32,6 +53,7 @@
         <Pack>True</Pack>
         <PackagePath>.</PackagePath>
       </None>
+      <None Remove="$(OutputPath)\**\*.deps.json" />
     </ItemGroup>
   </Target>
 

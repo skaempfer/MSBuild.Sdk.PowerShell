@@ -73,7 +73,7 @@ public class CreateModuleManifest : Microsoft.Build.Utilities.Task
     FileList = @()
     PrivateData = @{{
         PSData = @{{
-            Tags = {this.GetModuleTags().ToPowerShellArray()}
+            Tags = {this.Tags.ToPowerShellArray()}
             LicenseUri = ''
             ProjectUri = ''
             IconUri = ''
@@ -94,14 +94,6 @@ public class CreateModuleManifest : Microsoft.Build.Utilities.Task
 
     return true;
   }
-
-  private IList<string> GetModuleTags() => this.Tags.Concat(GetDefaultPowerShellGetTags()).Distinct().ToList();
-
-  /// <summary>
-  /// Add tags to mimic the behaviour of PowerShellGet's Publish-Module command.
-  /// </summary>
-  /// <returns>A list of tags created by PowerShellGet's Publish-Module command</returns>
-  private IList<string> GetDefaultPowerShellGetTags() => new List<string> { "PSModule" }; 
 
   private static (string Prefix, string Suffix) Split(string version, bool includeSeparator)
   {

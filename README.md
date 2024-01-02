@@ -30,9 +30,14 @@ In the .csproj of your PowerShell project replace the value of the 'Sdk' attribu
 
 For more information on how to use custom MSBuild project sdks see the [official Microsoft documentation](https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?view=vs-2022).
 
-
 ## General Usage
 
 ### Providing Package Metadata
 
 ### Generating a PowerShell Module NuGet Package 
+
+### Customization
+
+Available MSBuild Properties
+
+- `GenerateModuleManifest` (default: True): Set this to `False` if you are providing your own `.psd1` file 

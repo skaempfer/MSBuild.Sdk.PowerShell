@@ -1,4 +1,4 @@
-<Project Sdk="MSBuild.Sdk.PowerShell/0.1.0">
+﻿<Project Sdk="MSBuild.Sdk.PowerShell/0.1.0">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,8 +7,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <ModuleId>TestModule</ModuleId>
+    <ModuleId>2068726b-dbbb-4984-9f79-1c686251e013</ModuleId>
+    <Authors>John Doe</Authors>
     <Copyright>John Doe</Copyright>
+    <Version>1.0.0</Version>
+    <CmdletsToExport>Get-Greeting</CmdletsToExport>
+    <Description>An example project for testing the MSBuild.Sdk.PowerShell</Description>
+    <PackageTags>ExampleTag</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

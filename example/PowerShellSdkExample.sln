@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		init-example.ps1 = init-example.ps1
 		nuget.config = nuget.config
 		README.md = README.md
+		remove-example-artifacts.ps1 = remove-example-artifacts.ps1
 	EndProjectSection
 EndProject
 Global
@@ -25,5 +26,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1589AB4-3CF9-4A15-977B-026D78301502}
 	EndGlobalSection
 EndGlobal

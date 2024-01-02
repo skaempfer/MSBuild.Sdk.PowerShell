@@ -5,21 +5,13 @@ root = true
 indent_style = space
 end_of_line = lf
 insert_final_newline = true
-
-# Xml files
-[*.{xml,csproj,props,targets}]
 indent_size = 2
-
-[nuget.config]
-indent_size = 2
+tab_width = 2
 
 # C# files
 [*.cs]
 
 #### Core EditorConfig Options ####
-
-indent_size = 2
-tab_width = 2
 
 #### .NET Coding Conventions ####
 [*.{cs,vb}]
@@ -173,6 +165,7 @@ csharp_preserve_single_line_statements = true
 csharp_style_namespace_declarations = file_scoped:warning
 csharp_style_prefer_method_group_conversion = true:silent
 csharp_style_prefer_top_level_statements = true:silent
+csharp_style_prefer_primary_constructors = true:suggestion
 
 #### Naming styles ####
 [*.{cs,vb}]
@@ -364,3 +357,5 @@ dotnet_naming_style.s_camelcase.required_prefix = s_
 dotnet_naming_style.s_camelcase.required_suffix = 
 dotnet_naming_style.s_camelcase.word_separator = 
 dotnet_naming_style.s_camelcase.capitalization = camel_case
+
+dotnet_style_prefer_collection_expression = true:suggestion

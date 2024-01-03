@@ -9,7 +9,7 @@
     <Version>0.1.0</Version>
     <PackageId>MSBuild.Sdk.PowerShell</PackageId>
     <PackageType>MSBuildSdk</PackageType>
-    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>Sebastian Kämpfer</Authors>
     <License>MIT</License>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

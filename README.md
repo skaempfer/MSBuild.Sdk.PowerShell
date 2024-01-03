@@ -5,6 +5,9 @@ Simplifies the workflow of creating and bundling binary PowerShell modules. This
 - automatic creation of a module manifest file (.psd1) based on the data provided in your project file (.csproj)
 - creating a Nuget package that is ready to be consumed by *PowerShellGet*
 
+[![Nuget](https://img.shields.io/nuget/v/MSBuild.Sdk.PowerShell?style=flat)](https://www.nuget.org/packages/MSBuild.Sdk.PowerShell)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/skaempfer/MSBuild.Sdk.PowerShell/actions/workflows/test.yml?style=flat&label=tests)](https://github.com/skaempfer/MSBuild.Sdk.PowerShell/actions/workflows/test.yml)
+
 ## Installation
 
 In the .csproj of your PowerShell project replace the value of the 'Sdk' attribute with 'MSBuild.PowerShell.Sdk' and the specific version:

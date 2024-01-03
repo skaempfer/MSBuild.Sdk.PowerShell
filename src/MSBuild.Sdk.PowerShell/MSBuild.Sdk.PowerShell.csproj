@@ -15,8 +15,8 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Description>An MsBuild Sdk for creating PowerShell modules.</Description>
     <Copyright>Sebastian Kämpfer</Copyright>
-    <PackageTags>MsBuild PowerShell Sdk</PackageTags>
-    <RepositoryUrl></RepositoryUrl>
+    <PackageTags>MSBuild PowerShell Sdk</PackageTags>
+    <RepositoryUrl>https://github.com/skaempfer/MSBuild.Sdk.PowerShell</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>

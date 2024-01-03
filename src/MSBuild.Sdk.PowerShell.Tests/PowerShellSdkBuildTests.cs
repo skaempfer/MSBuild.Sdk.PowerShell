@@ -3,6 +3,8 @@
 namespace MSBuild.Sdk.PowerShell.Tests;
 public class PowerShellSdkBuildTests : SdkTests
 {
+  public const string DOTNET_VERSION = "net8.0";
+
   public PowerShellSdkBuildTests()
   {
     Directory.CreateDirectory(this.TestRootPath);
@@ -20,7 +22,7 @@ public class PowerShellSdkBuildTests : SdkTests
 
     // Assert
     Assert.True(success, output.GetConsoleLog());
-    string outputPath = Path.Combine(this.TestRootPath, "bin", "Debug", "net5.0");
+    string outputPath = Path.Combine(this.TestRootPath, "bin", "Debug", DOTNET_VERSION);
     Assert.True(File.Exists(Path.Combine(outputPath, $"{this.TestProjectName}.dll")));
     Assert.True(File.Exists(Path.Combine(outputPath, $"{this.TestProjectName}.psd1")));
   }
@@ -38,7 +40,7 @@ public class PowerShellSdkBuildTests : SdkTests
 
     // Assert
     Assert.True(success, output.GetConsoleLog());
-    string outputPath = Path.Combine(this.TestRootPath, "bin", "Debug", "net5.0");
+    string outputPath = Path.Combine(this.TestRootPath, "bin", "Debug", DOTNET_VERSION);
     Assert.True(File.Exists(Path.Combine(outputPath, $"{this.TestProjectName}.dll")));
     DirectoryInfo outputDirectory = new DirectoryInfo(outputPath);
     Assert.Empty(outputDirectory.GetFiles("*.psd1"));
@@ -89,7 +91,7 @@ public class PowerShellSdkBuildTests : SdkTests
   {
     // Arrange
     string formatFile = "Type1.format.ps1xml";
-    this.CreateFiles(Path.Combine(this.TestRootPath, "bin", "Debug", "net5.0"), formatFile);
+    this.CreateFiles(Path.Combine(this.TestRootPath, "bin", "Debug", DOTNET_VERSION), formatFile);
 
     ProjectCreator projectCreator = this.CreatePowerShellProject()
         .Property("CmdletsToExport", "Add-Item;Get-Item")
@@ -158,7 +160,7 @@ public class PowerShellSdkBuildTests : SdkTests
     return ProjectCreator.Create(
             path: this.TestProjectPath)
         .Property("PowerShellTaskAssembly", Path.Combine(thisAssemblyPath, "MsBuild.Sdk.PowerShell.dll"))
-        .Property("TargetFramework", "net5.0")
+        .Property("TargetFramework", DOTNET_VERSION)
         .PropertyGroup()
             .Property("Authors", "John Doe")
             .Property("Company", "ACME")

@@ -5,6 +5,8 @@ using Microsoft.Build.Utilities.ProjectCreation;
 namespace MSBuild.Sdk.PowerShell.Tests;
 public class PowerShellSdkPackTests : SdkTests
 {
+  public static string DOTNET_VERSION = "net8.0";
+
   [Fact]
   public void CreatesPowerShellGetComliantNugetPackage()
   {
@@ -41,7 +43,7 @@ public class PowerShellSdkPackTests : SdkTests
     return ProjectCreator.Create(
             path: this.TestProjectPath)
         .Property("PowerShellTaskAssembly", Path.Combine(thisAssemblyPath, "MsBuild.Sdk.PowerShell.dll"))
-        .Property("TargetFramework", "net5.0")
+        .Property("TargetFramework", DOTNET_VERSION)
         .PropertyGroup()
             .Property("Authors", "John Doe")
             .Property("Company", "ACME")

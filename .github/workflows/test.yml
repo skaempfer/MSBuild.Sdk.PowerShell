@@ -3,7 +3,7 @@ run-name: Running tests for MSBuild.Sdk.PowerShell
 on: [push]
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - name: Install .NET Core SDK (global.json)

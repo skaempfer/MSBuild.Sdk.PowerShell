@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Open PowerShell with module": {
+      "commandName": "Executable",
+      "executablePath": "pwsh",
+      "commandLineArgs": "-NoExit -Command \"Import-Module .\\PowerShellSdkExample.psd1\""
+    }
+  }
+}

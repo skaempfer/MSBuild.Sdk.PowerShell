@@ -14,6 +14,7 @@
     <CmdletsToExport>Get-Greeting</CmdletsToExport>
     <Description>An example project for testing the MSBuild.Sdk.PowerShell</Description>
     <PackageTags>ExampleTag</PackageTags>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>

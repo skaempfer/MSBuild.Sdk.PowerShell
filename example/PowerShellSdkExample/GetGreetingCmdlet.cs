@@ -2,7 +2,7 @@
 
 namespace PowerShellSdkExample;
 
-[Cmdlet(VerbsCommon.Get, "GreetingCmdlet")]
+[Cmdlet(VerbsCommon.Get, "Greeting")]
 [OutputType(typeof(string))]
 public class GetGreetingCmdlet : PSCmdlet
 {

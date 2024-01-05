@@ -6,7 +6,7 @@ Simplifies the workflow of creating and bundling binary PowerShell modules. This
 - creating a Nuget package that is ready to be consumed by *PowerShellGet*
 
 [![Nuget](https://img.shields.io/nuget/v/MSBuild.Sdk.PowerShell?style=flat)](https://www.nuget.org/packages/MSBuild.Sdk.PowerShell)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/skaempfer/MSBuild.Sdk.PowerShell/actions/workflows/test.yml?style=flat&label=tests)](https://github.com/skaempfer/MSBuild.Sdk.PowerShell/actions/workflows/test.yml)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/skaempfer/MSBuild.Sdk.PowerShell/test.yml?style=flat&label=tests)](https://github.com/skaempfer/MSBuild.Sdk.PowerShell/actions/workflows/test.yml)
 
 ## Installation
 
